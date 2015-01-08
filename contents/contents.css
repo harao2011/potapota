@@ -37,7 +37,7 @@ dl.information dd {
 
 #main {
     width: 100%;
-    height: 1000px;
+    display: inline-block;
 }
 
 #center {
@@ -51,6 +51,7 @@ dl.information dd {
     margin-left: 200px;
     height: 100%;
     border-right: thin solid;
+    border-left: thin solid;
 }
 
 #center_sub {
@@ -68,7 +69,7 @@ dl.information dd {
 }
 
 #explain {
-	margin-bottom: 30px;
+	margin-bottom: 100px;
 }
 
 #contents {
@@ -81,7 +82,6 @@ dl.information dd {
     margin-left: -100%;
     width: 200px;
     height: 100%;
-    border-right: thin solid;
 }
 #news {
     height: 400px;
@@ -100,7 +100,6 @@ dl.information dd {
 }
 
 #footer {
-    background-color: blue;
     width: 100%;
     height: 100px;
 }
