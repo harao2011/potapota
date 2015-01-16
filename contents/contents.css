@@ -92,13 +92,14 @@ dl.information dd {
     /*background-color: yellow;/*/
     float: left;
     margin-left: -230px;
-    width: 200px;
+    width: 230px;
     height: 100%;
 }
 
-#mail_adress {
-    margin-left: 20px;
+#mail {
+    margin-left: 5px;
 }
+
 
 #footer {
     width: 100%;
