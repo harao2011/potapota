@@ -10,7 +10,16 @@
 <title>ぽたぽたと学ぶゼロからのプログラミング入門</title>
 <link rel="shortcut icon" type="image/ico" href="http://static.fc2.com/share/image/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="../../contents.css" />
+<link type="text/css" rel="stylesheet" href="../../../styles/shCoreDefault.css"/>
 <script type="text/javascript" src="http://static.fc2.com/share/fc2parts/js/jquery.js"></script>
+<script type="text/javascript" src="../../../scripts/shCore.js"></script>
+
+<script type="text/javascript" src="../../../scripts/shBrushCss.js"></script>
+
+<script type="text/javascript" src="../../../scripts/shBrushXml.js"></script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
 <script>
 $(document).ready( function() {
 	ownURL = "http://" + location.host + "/";
@@ -68,15 +77,33 @@ $(document).ready( function() {
 				<p>上記のようにhtml内にタグを書いて、CSSを指定すると文字を赤くすることができますね。
 				</p>
 				<p><br>idの意味を理解できれば、もうあなたはかなり自由にデザインを変えられるようになっています。<br>例えば下記のように書けば文字の色や配置を変えられます。
+				</p><p>【HTML】
+<pre class="brush: html;">
+
+<label id="potapota">プログラミング</label>
+</pre>
+</p>
+
+<p>【CSS】
+<pre class="brush: css;">
+
+#potapota {
+	color: red;
+	float: right;
+	background-color: gray;
+}
+</pre>
+</p>
+				<p>【完成図】<img class="contentsimg" src="website2-3.jpg"/>
 				</p>
-				<p>例えばこんな風にデザインを変えることも可能です。
-				</p>
+
+
 				<p><br>このようにCSSでサイトの配置や配色を整えていきます。
 				</p>
-				<p><br>さて、CSSの次はdivタグ（ディブタグ）に関して学びました。<br>このサイトもそうですが、ウェブサイトは、例えば上にヘッダーと呼ばれる領域があって、右や左にちょっとした領域があったりしてといった具合に区分けされているのが普通です。その区分けを実現するために一番お手軽に使えるのがdivタグです。				</p>
-				<p><br>このdivタグを使って区分けして、そのdivタグの領域の中を更にdivタグで区分けしていく、このように整えていくだけでも結構立派なものが作れます。<br>まず、divタグでざっくりサイトの配置を決めていってCSSで幅、高さ、背景色などを決めていく、今回の動画ではこのような順序でサイトの骨組みを完成させていきました。
-				<p><img class="contentsimg" src="website2-3.jpg"/>
+				<p><br>さて、CSSの次はdivタグ（ディブタグ）に関して学びました。<br>このサイトもそうですが、ウェブサイトは、例えば上にヘッダーと呼ばれる領域があって、右や左にちょっとした領域があったりしてといった具合に区分けされているのが普通です。その区分けを実現するために一番お手軽に使えるのがdivタグです。</p>
+				<p><img class="contentsimg" src="website2-4.jpg"/>
 				</p>
+				<p><br>このdivタグを使って区分けして、そのdivタグの領域の中を更にdivタグで区分けしていく、このように整えていくだけでも結構立派なものが作れます。<br>まず、divタグでざっくりサイトの配置を決めていってCSSで幅、高さ、背景色などを決めていく、今回の動画ではこのような順序でサイトの骨組みを完成させていきました。
 				</p>
 				<p>さて、そんな感じで第２回「CSSの基本を知る」はここまでです。
 				</p>
