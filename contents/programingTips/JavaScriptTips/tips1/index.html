@@ -98,7 +98,7 @@ $(document).ready( function() {
 		})
 </pre>
 			</p>
-				<p>一番下までスクロールした時とは、scrollTop（ページの見えていない上部分の縦幅）とwindowの縦幅の合計がページ全体の縦幅と一致したときです。<br><br>そのため、<br><br>scrollTop + $(window).height() = $(document).height()<br><br>のときが一番下までスクロールしたときになり、scrollイベント内でその判定をしてあげることで実現できます。
+				<p>一番下までスクロールしたタイミングとは、scrollTop（ページの見えていない上部分の縦幅）とwindowの縦幅の合計がページ全体の縦幅と一致したタイミングです。<br><br>そのため、<br><br>scrollTop + $(window).height() = $(document).height()<br><br>のときが一番下までスクロールしたときになり、scrollイベント内でその判定をしてあげることで実現できます。
 				</p>
 				</div>
 			</div>
