@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>
+		$(window).scroll(function() {
+			//見えない部分も含めたページ全体の幅	
+			var documentHeight = $(document).height();
+
+			//スクロールの結果見えている部分の高さ
+			var scrollTop = $(this).scrollTop();
+			
+			//ウィンドウの縦幅
+			var windowHeight = $(window).height();
+			
+			//見えている部分の一番上の位置（上にはみ出している幅）+ 
+			//ウィンドウの幅がページ全体の幅になった時
+			if (documentHeight <= scrollTop + windowHeight) {
+				alert('reach page bottom!');
+			}
+		})
+	</script>
+</head>
+<body>
+	<!-- スクロールバーを出すためだけのdiv -->
+	<div style="height: 1500px;">
+	</div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noindex,nofollow" />
+<title>ぽたぽたと学ぶゼロからのプログラミング入門</title>
+<link rel="shortcut icon" type="image/ico" href="http://static.fc2.com/share/image/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../../../contents.css" />
+<link type="text/css" rel="stylesheet" href="../../../../styles/shCoreDefault.css"/>
+<script type="text/javascript" src="http://static.fc2.com/share/fc2parts/js/jquery.js"></script>
+<script type="text/javascript" src="../../../../scripts/shCore.js"></script>
+
+<script type="text/javascript" src="../../../../scripts/shBrushJScript.js"></script>
+
+<script type="text/javascript" src="../../../../scripts/shBrushXml.js"></script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<script>
+$(document).ready( function() {
+	ownURL = "http://" + location.host + "/";
+	$("#mylink").attr("href", ownURL);
+	$("#mylink").append(ownURL);
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58130476-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+    <div id="header">
+	<div class="breadCrumb">
+		<a href="../../../../index.html">Home</a> › 
+		<a href="../../index.html">プログラミングTips</a> › 
+		<a href="../index.html">JavaScript Tips</a> › This Page
+	</div>
+    </div>
+    <div id="main">
+        <div id="center">
+            <div id="center_main">
+		<div id="center_sub">
+			<div id="tipstitle">
+				<span>ページを一番下までスクロールしたときにイベントを発火する方法</span>
+			</div>
+			<div class="tipsHeader">【結論】</div>
+			<div id="conclusion">	
+				<div class="tipsSubHeader">
+				<p>documentとscrolltopとwindowを利用して判定できます。</p>
+				<p>・document.heigth: 見えない部分も含めたページ全体の縦幅<br>・scrolltop: スクロールで見えている部分の高さ<br>・window.height: windowの縦幅
+				</p>
+				<p>
+					<a href="src/index.html" target="_brank">動作を確認する</a><br>
+					ソースのダウンロードは<a href="src.zip">こちら</a>	
+				</p>
+			</div>
+			</div>
+			<div class="tipsHeader">【詳細】</div>
+                	<div id="detail">
+				<div class="tipsSubHeader"><p>【HTML】
+<pre class="brush: html;">
+
+
+<!-- スクロールバーを出すためだけのdiv -->
+<div style="height: 1500px;">
+</div>
+</pre>
+</p>
+
+<p>【JavaScript】
+<pre class="brush: javascript;">
+
+		$(window).scroll(function() {
+			//見えない部分も含めたページ全体の幅	
+			var documentHeight = $(document).height();
+
+			//スクロールの結果見えている部分の高さ
+			var scrollTop = $(this).scrollTop();
+			
+			//ウィンドウの縦幅
+			var windowHeight = $(window).height();
+			
+			//見えている部分の一番上の位置（上にはみ出している幅）+ 
+			//ウィンドウの幅がページ全体の幅になった時
+			if (documentHeight <= scrollTop + windowHeight) {
+				alert('reach page bottom!');
+			}
+		})
+</pre>
+			</p>
+				<p>一番下までスクロールした時はすなわちscrollTop（スクロールの結果見えている部分のtopのy座標）とwindowの縦幅の合計がページ全体の縦幅と一致したときです。<br><br>そのため、<br><br>scrollTop + $(window).height() = $(document).height()<br><br>のときが一番下までスクロールしたときになり、scrollイベント内でその判定をしてあげることで実現できます。
+				</p>
+				</div>
+			</div>
+		</div>
+            </div>
+        </div>
+        <div id="left_side_bar">
+	    <div id="news">
+		<h3>NEWS</h3>
+                <dl class="information">
+		<dt><span>2014-01-25</span></dt>
+		<dd>
+                	<div>
+                    		<a href="../../../website/website3/index.html">画像埋め込みの基本を知る</a>
+                	</div>
+            	</dd>
+		<dt><span>2014-01-16</span></dt>
+		<dd>
+                	<div>
+                    		<a href="../../../website/website2/index.html">CSSの基本を知る</a>
+                	</div>
+            	</dd>
+		<dt><span>2014-01-13</span></dt>
+		<dd>
+                	<div>
+                    		<a href="../../../website/website1/index.html">HTMLの基本を知る</a>
+                	</div>
+            	</dd>
+<!--
+            	<dt><span>2014-01-14</span></dt>
+            	<dd>
+                	<div>
+                    		test2
+                	</div>
+            	</dd>
+-->
+         	</dl>
+
+            </div>
+	    <div id="link">
+
+		<h3>LINK</h3>
+		<dt><a target=”_blank” href="http://techinfo.jp/">techinfo.jp</a></dt>
+		<dt><a target=”_blank” href="http://www1.bbiq.jp/takeharu/">はじめてのJava入門</a></dt>
+		<dt><a target=”_blank” href="http://www3.plala.or.jp/binder/index.html">初心者のためのHTML入門講座</a></dt>
+		<dt><a href="http://www.homepage-4u.com/" target="_blank">３日で作るホームページ♪</a>
+</dt>
+
+	    </div>
+
+
+        </div>
+        <div id="right_side_bar">
+
+	    <h3>E-MAIL</h3>
+	    <div id="mail">
+
+		<script type="text/javascript" src="http://form1.fc2.com/parts/index.php?id=952333"></script>
+	    </div>
+        </div>
+    </div>
+    <div id="footer">
+    </div>
+</body>
+</html>
