@@ -57,7 +57,7 @@ $(document).ready( function() {
 			<div id="conclusion">	
 				<div class="tipsSubHeader">
 				<p>documentとscrolltopとwindowを利用して判定できます。</p>
-				<p>・document.heigth: 見えない部分も含めたページ全体の縦幅<br>・scrolltop: スクロールで見えている部分の高さ<br>・window.height: windowの縦幅
+				<p>・document.heigth: 見えない部分も含めたページ全体の縦幅<br>・scrolltop: ページの見えていない上部分の縦幅<br>・window.height: windowの縦幅
 				</p>
 				<p>
 					<a href="src/index.html" target="_brank">動作を確認する</a><br>
@@ -84,13 +84,13 @@ $(document).ready( function() {
 			//見えない部分も含めたページ全体の幅	
 			var documentHeight = $(document).height();
 
-			//スクロールの結果見えている部分の高さ
+			//ページの見えていない上部分の縦幅
 			var scrollTop = $(this).scrollTop();
 			
 			//ウィンドウの縦幅
 			var windowHeight = $(window).height();
 			
-			//見えている部分の一番上の位置（上にはみ出している幅）+ 
+			//ページの見えていない上部分の縦幅（上にはみ出している幅）+ 
 			//ウィンドウの幅がページ全体の幅になった時
 			if (documentHeight <= scrollTop + windowHeight) {
 				alert('reach page bottom!');
@@ -98,7 +98,7 @@ $(document).ready( function() {
 		})
 </pre>
 			</p>
-				<p>一番下までスクロールした時はすなわちscrollTop（スクロールの結果見えている部分のtopのy座標）とwindowの縦幅の合計がページ全体の縦幅と一致したときです。<br><br>そのため、<br><br>scrollTop + $(window).height() = $(document).height()<br><br>のときが一番下までスクロールしたときになり、scrollイベント内でその判定をしてあげることで実現できます。
+				<p>一番下までスクロールした時とは、scrollTop（ページの見えていない上部分の縦幅）とwindowの縦幅の合計がページ全体の縦幅と一致したときです。<br><br>そのため、<br><br>scrollTop + $(window).height() = $(document).height()<br><br>のときが一番下までスクロールしたときになり、scrollイベント内でその判定をしてあげることで実現できます。
 				</p>
 				</div>
 			</div>

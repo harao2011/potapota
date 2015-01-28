@@ -7,13 +7,13 @@
 			//見えない部分も含めたページ全体の幅	
 			var documentHeight = $(document).height();
 
-			//スクロールの結果見えている部分の高さ
+			//ページの見えていない上部分の縦幅
 			var scrollTop = $(this).scrollTop();
 			
 			//ウィンドウの縦幅
 			var windowHeight = $(window).height();
 			
-			//見えている部分の一番上の位置（上にはみ出している幅）+ 
+			//ページの見えていない上部分の縦幅（上にはみ出している幅）+ 
 			//ウィンドウの幅がページ全体の幅になった時
 			if (documentHeight <= scrollTop + windowHeight) {
 				alert('reach page bottom!');
